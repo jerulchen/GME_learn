@@ -191,11 +191,27 @@
             }
         },
         {
+            "Key": "9e081d8a-1862-40af-b58a-a54719cbe990",
+            "Value": {
+                "id": "d5fc8768-4fdd-470f-83ea-de21691df5e2",
+                "resourcePath": "objects\\obj_debris\\obj_debris.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "a29b8c02-0349-43fb-92e1-adc16d44bb53",
                 "resourcePath": "options\\linux\\options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "b18c78cf-03b2-4551-9fed-e18588d163bf",
+            "Value": {
+                "id": "b3e06291-cae9-48c1-8b56-11460d5e67c4",
+                "resourcePath": "sprites\\spr_debris\\spr_debris.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
