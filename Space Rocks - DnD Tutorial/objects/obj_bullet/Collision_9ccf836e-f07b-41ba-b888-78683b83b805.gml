@@ -1,3 +1,18 @@
+/// @DnDAction : YoYo Games.Common.Apply_To
+/// @DnDVersion : 1
+/// @DnDHash : 4A9EBFF1
+/// @DnDApplyTo : 7eaf8bc0-6011-4b24-9af8-509f42e3e9c0
+with(obj_game) {
+	/// @DnDAction : YoYo Games.Instance Variables.Set_Score
+	/// @DnDVersion : 1
+	/// @DnDHash : 763CA454
+	/// @DnDParent : 4A9EBFF1
+	/// @DnDArgument : "score" "10"
+	/// @DnDArgument : "score_relative" "1"
+	if(!variable_instance_exists(id, "__dnd_score")) __dnd_score = 0;
+	__dnd_score += real(10);
+}
+
 /// @DnDAction : YoYo Games.Instances.Destroy_Instance
 /// @DnDVersion : 1
 /// @DnDHash : 496AAC7C
