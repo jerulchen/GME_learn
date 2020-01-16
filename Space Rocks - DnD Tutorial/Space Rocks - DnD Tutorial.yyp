@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "619ab01d-1d42-4e34-a5db-2e3861e54e8f",
+            "Value": {
+                "id": "fcecca4f-4f7b-4355-8ee3-486a447d120c",
+                "resourcePath": "sprites\\spr_item_shotgun\\spr_item_shotgun.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "62d54e40-aa01-413e-87d0-a092d63b577f",
             "Value": {
                 "id": "e615cddc-fbed-438a-9d43-c21460039917",
@@ -231,11 +239,27 @@
             }
         },
         {
+            "Key": "a8055a93-20f7-4e3d-8c20-91b920b77526",
+            "Value": {
+                "id": "e3fd2e8b-adbd-44e4-bed1-38cd32f273b8",
+                "resourcePath": "objects\\obj_bullet_shotgun\\obj_bullet_shotgun.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "a9188620-a624-4a5a-83ae-a1b53faf038b",
             "Value": {
                 "id": "a29b8c02-0349-43fb-92e1-adc16d44bb53",
                 "resourcePath": "options\\linux\\options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "b01587e9-3dbf-445e-9c97-8de18327273e",
+            "Value": {
+                "id": "51a69840-881e-441d-8e18-551b4c3975c4",
+                "resourcePath": "objects\\obj_item_shotgun\\obj_item_shotgun.yy",
+                "resourceType": "GMObject"
             }
         },
         {
