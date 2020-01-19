@@ -20,6 +20,13 @@ if(room == rm_game)
 	/// @DnDArgument : "alarm" "1"
 	alarm_set(1, 300);
 
+	/// @DnDAction : YoYo Games.Common.Variable
+	/// @DnDVersion : 1
+	/// @DnDHash : 553BB748
+	/// @DnDParent : 35CE3407
+	/// @DnDArgument : "var" "char_bullettype"
+	char_bullettype = 0;
+
 	/// @DnDAction : YoYo Games.Loops.Repeat
 	/// @DnDVersion : 1
 	/// @DnDHash : 47774E4C
