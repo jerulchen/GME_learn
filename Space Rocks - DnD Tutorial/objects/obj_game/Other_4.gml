@@ -20,12 +20,20 @@ if(room == rm_game)
 	/// @DnDArgument : "alarm" "1"
 	alarm_set(1, 300);
 
-	/// @DnDAction : YoYo Games.Common.Variable
+	/// @DnDAction : YoYo Games.Common.Set_Global
 	/// @DnDVersion : 1
-	/// @DnDHash : 553BB748
+	/// @DnDHash : 702D8FE8
 	/// @DnDParent : 35CE3407
 	/// @DnDArgument : "var" "char_bullettype"
-	char_bullettype = 0;
+	global.char_bullettype = 0;
+
+	/// @DnDAction : YoYo Games.Common.Get_Global
+	/// @DnDVersion : 1
+	/// @DnDHash : 0DC8E15C
+	/// @DnDParent : 35CE3407
+	/// @DnDArgument : "output" "char_bullettype"
+	/// @DnDArgument : "var" "char_bullettype"
+	char_bullettype = global.char_bullettype;
 
 	/// @DnDAction : YoYo Games.Loops.Repeat
 	/// @DnDVersion : 1

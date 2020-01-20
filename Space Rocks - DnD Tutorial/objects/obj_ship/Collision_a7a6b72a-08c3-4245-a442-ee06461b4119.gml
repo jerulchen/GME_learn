@@ -23,6 +23,13 @@ with(obj_game) {
 	/// @DnDArgument : "var_1" "y_shipDestory"
 	x_shipDestory = obj_ship.x;
 	y_shipDestory = obj_ship.y;
+
+	/// @DnDAction : YoYo Games.Common.Set_Global
+	/// @DnDVersion : 1
+	/// @DnDHash : 43EE19EE
+	/// @DnDParent : 1083E5AF
+	/// @DnDArgument : "var" "char_bullettype"
+	global.char_bullettype = 0;
 }
 
 /// @DnDAction : YoYo Games.Common.Apply_To

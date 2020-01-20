@@ -133,5 +133,73 @@ if(!l0EFF8CFF_0)
 			/// @DnDSaveInfo : "objectid" "9e081d8a-1862-40af-b58a-a54719cbe990"
 			instance_create_layer(x_shipDestory, y_shipDestory, "Instances", obj_debris);
 		}
+	
+		/// @DnDAction : YoYo Games.Common.Variable
+		/// @DnDVersion : 1
+		/// @DnDHash : 33F042D8
+		/// @DnDParent : 13CF8E92
+		/// @DnDArgument : "var" "bullet_respawn_count"
+		bullet_respawn_count = 0;
+	
+		/// @DnDAction : YoYo Games.Loops.Loop
+		/// @DnDVersion : 1
+		/// @DnDHash : 645655ED
+		/// @DnDParent : 13CF8E92
+		while(true)
+		{
+			/// @DnDAction : YoYo Games.Common.If_Variable
+			/// @DnDVersion : 1
+			/// @DnDHash : 6A04DFDF
+			/// @DnDParent : 645655ED
+			/// @DnDArgument : "var" "bullet_respawn_count"
+			/// @DnDArgument : "op" "4"
+			/// @DnDArgument : "value" "36"
+			if(bullet_respawn_count >= 36)
+			{
+				/// @DnDAction : YoYo Games.Loops.Break
+				/// @DnDVersion : 1
+				/// @DnDHash : 6A03F0EA
+				/// @DnDParent : 6A04DFDF
+				break;
+			}
+		
+			/// @DnDAction : YoYo Games.Common.Else
+			/// @DnDVersion : 1
+			/// @DnDHash : 04ECC0CB
+			/// @DnDParent : 645655ED
+			else
+			{
+				/// @DnDAction : YoYo Games.Instances.Create_Instance
+				/// @DnDVersion : 1
+				/// @DnDHash : 2F123ABC
+				/// @DnDParent : 04ECC0CB
+				/// @DnDArgument : "xpos" "x_shipDestory"
+				/// @DnDArgument : "xpos_relative" "1"
+				/// @DnDArgument : "ypos" "y_shipDestory"
+				/// @DnDArgument : "ypos_relative" "1"
+				/// @DnDArgument : "var" "respawnBullets"
+				/// @DnDArgument : "var_temp" "1"
+				/// @DnDArgument : "objectid" "obj_bullet_respawn"
+				/// @DnDSaveInfo : "objectid" "3d42308e-aec1-422d-9ef9-4d4428629803"
+				var respawnBullets = instance_create_layer(x + x_shipDestory, y + y_shipDestory, "Instances", obj_bullet_respawn);
+			
+				/// @DnDAction : YoYo Games.Common.Variable
+				/// @DnDVersion : 1
+				/// @DnDHash : 15868749
+				/// @DnDParent : 04ECC0CB
+				/// @DnDArgument : "expr" "bullet_respawn_count*10"
+				/// @DnDArgument : "var" "respawnBullets.direction"
+				respawnBullets.direction = bullet_respawn_count*10;
+			
+				/// @DnDAction : YoYo Games.Common.Variable
+				/// @DnDVersion : 1
+				/// @DnDHash : 4A501A68
+				/// @DnDParent : 04ECC0CB
+				/// @DnDArgument : "expr" "1"
+				/// @DnDArgument : "expr_relative" "1"
+				/// @DnDArgument : "var" "bullet_respawn_count"
+				bullet_respawn_count += 1;
+			}
+		}
 	}
 }
