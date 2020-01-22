@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "728b85dc-bb8d-47d8-bdd4-12041b11e501",
+            "Value": {
+                "id": "cb7936eb-e503-43fd-8d94-a27d371194a9",
+                "resourcePath": "sprites\\spr_debris_shiprespawn\\spr_debris_shiprespawn.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "73e510d4-bc13-4d9b-94cc-e5b483067406",
             "Value": {
                 "id": "a76acaf6-f369-44bc-a252-5949e4fb4e15",
@@ -156,6 +164,14 @@
                 "id": "3df1c3c3-051a-40d7-8a7a-40b7107ad2d7",
                 "resourcePath": "views\\bceb7cc9-0c8f-425e-b998-71b947d4c05b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "bd68b5c9-aef5-4f7c-9fd5-73da0c7714cf",
+            "Value": {
+                "id": "b9f82c33-67d7-4aca-acb9-78eac0a52112",
+                "resourcePath": "objects\\obj_debris_shiprespawn\\obj_debris_shiprespawn.yy",
+                "resourceType": "GMObject"
             }
         },
         {
