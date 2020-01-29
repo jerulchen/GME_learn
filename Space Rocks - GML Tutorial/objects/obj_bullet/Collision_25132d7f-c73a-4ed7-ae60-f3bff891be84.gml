@@ -2,7 +2,7 @@
 // You can write your code in this editor
 score += 10;
 instance_destroy();
-
+audio_play_sound(snd_die, 1, false);
 with(other)
 {
 instance_destroy();
@@ -29,5 +29,9 @@ instance_create_layer(x,y,"Instances", obj_debris);
 }
 
 
-
+if (irandom_range(1,10) == 1 & !instance_exists(obj_item_1up))
+{
+	instance_create_layer(x,y,"Instances", obj_item_1up);
+	
+}
 }

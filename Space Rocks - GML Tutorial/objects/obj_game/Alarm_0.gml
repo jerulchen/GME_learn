@@ -35,6 +35,23 @@ else
 
 }
 
+if (!instance_exists(obj_item_bullet))
+{
+	if (choose(0,1) ==1)
+	{
+	var item_bullet_xx = irandom_range(0 , room_width);
+	var item_bullet_yy = choose(0 , room_height);
+	}
+	else
+	{
+	var item_bullet_xx = choose(0 , room_width);
+	var item_bullet_yy = irandom_range(0 , room_height);
+	}
+
+instance_create_layer(item_bullet_xx,item_bullet_yy,"Instances",obj_item_bullet);
+
+}
 	instance_create_layer(xx,yy,"Instances",obj_asteroid);
 
 	alarm[0] = 4 * room_speed;
+

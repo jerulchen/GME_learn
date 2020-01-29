@@ -7,6 +7,21 @@ switch(room)
 case rm_game:
 	draw_text(20,  20,  "SCORE: " + string(score));
 	draw_text(20,  60,  "LIVES: " + string(lives));
+	
+	draw_text(20,  100, "GUN: " + string(gun));
+	if (alarm [2] >0)
+	{
+	draw_text(20,  140, "GUN TIME: " + string(alarm[2] / room_speed)); 
+	}
+	if (lives >=1 && !instance_exists(obj_ship) && alarm[1] > 0)
+	{
+	var c = c_yellow;
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	draw_text_transformed_color(room_width/2 , 20, "SHIP WILL RESPAWN IN " + string(floor(alarm[1]/room_speed)) + " S",1.5,1.5,0,c,c,c,c,1);
+	draw_set_halign(fa_left);
+	draw_set_valign(fa_top);
+	}
 	break;
 	
 case rm_start:

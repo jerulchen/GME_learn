@@ -8,9 +8,11 @@ exit;
 
 if (lives >=1 & !instance_exists(obj_ship))
 {
-instance_create_layer(global.shiprespawnx,global.shiprespawny,"Instances",obj_ship);
-repeat(100)
-{
-instance_create_layer(global.shiprespawnx,global.shiprespawny,"Instances",obj_debris_shiprespawn);
-}
+	
+	room_restart();
+//instance_create_layer(global.shiprespawnx,global.shiprespawny,"Instances",obj_ship);
+//repeat(100)
+//{
+//instance_create_layer(global.shiprespawnx,global.shiprespawny,"Instances",obj_debris_shiprespawn);
+//}
 }

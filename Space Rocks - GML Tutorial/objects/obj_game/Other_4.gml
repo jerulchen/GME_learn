@@ -3,6 +3,11 @@
 
 if (room == rm_game)
 {
+	if audio_is_playing(msc_song)
+	{
+	audio_stop_sound(msc_song)
+	}
+	audio_play_sound(msc_song, 2 ,true);
 repeat(6)
 	{
 	var xx = choose(irandom_range(0, obj_ship.x*0.5),irandom_range((room_width-obj_ship.x) * 0.5 ,room_width));
@@ -11,6 +16,7 @@ repeat(6)
 	instance_create_layer(xx,yy,"Instances",obj_asteroid);
 	
 	}
+	gun= "NORMAL" ;
 	alarm[0] = 60;
 	
 
