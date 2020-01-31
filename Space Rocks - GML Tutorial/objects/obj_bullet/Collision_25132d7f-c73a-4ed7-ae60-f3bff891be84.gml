@@ -29,9 +29,9 @@ instance_create_layer(x,y,"Instances", obj_debris);
 }
 
 
-if (irandom_range(1,10) == 1 & !instance_exists(obj_item_1up))
-{
-	instance_create_layer(x,y,"Instances", obj_item_1up);
+//if (irandom_range(1,10) == 1 & !instance_exists(obj_item_1up))
+//{
+//	instance_create_layer(x,y,"Instances", obj_item_1up);
 	
-}
+//}
 }

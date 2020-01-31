@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (room != rm_game & instance_exists(obj_ship)) 
+if ((room != rm_game && room != rm_boss) || !instance_exists(obj_ship)) 
 {
 exit;
 }

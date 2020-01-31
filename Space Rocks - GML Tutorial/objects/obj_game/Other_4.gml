@@ -3,7 +3,7 @@
 
 if (room == rm_game)
 {
-	if audio_is_playing(msc_song)
+	if (audio_is_playing(msc_song))
 	{
 	audio_stop_sound(msc_song)
 	}
@@ -18,6 +18,23 @@ repeat(6)
 	}
 	gun= "NORMAL" ;
 	alarm[0] = 60;
+	alarm[3] = room_speed * 5 ;
+	
+	obj_ship.alarm[2] = skillcd / 2 * room_speed;
+	
+
+}
+
+if (room == rm_boss)
+{
+	if (audio_is_playing(msc_song))
+	{
+		audio_stop_sound(msc_song);
+	
+	}
+	audio_play_sound(msc_song, 2, true);
+	
+	alarm[4] = room_speed * 5;
 	
 
 }

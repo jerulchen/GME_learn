@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-global.shiprespawnx = x
-global.shiprespawny = y
+//global.shiprespawnx = x
+//global.shiprespawny = y
 instance_destroy()
 audio_play_sound(snd_die, 1, false);
 with(other)

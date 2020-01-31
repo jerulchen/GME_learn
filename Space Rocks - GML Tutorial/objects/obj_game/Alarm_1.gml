@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (room != rm_game) 
+if (room != rm_game && room != rm_boss) 
 {
 exit;
 }
