@@ -1,17 +1,32 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-gun = "SHOTGUN";
-
-if (obj_game.alarm[2] >0)
+if (gun = "SHOTGUN")
 {
-obj_game.alarm [2] += 600;
+	if (shotgun_level < shotgun_level_max)
+	{
+	shotgun_level ++
+	}
 }
 
 else
 {
-obj_game.alarm [2] = 600;
+gun = "SHOTGUN";
+shotgun_level = 0;
+
 }
+
+
+//if (obj_game.alarm[2] >0)
+//{
+//obj_game.alarm [2] += 600;
+//}
+
+//else
+//{
+//obj_game.alarm [2] = 600;
+//}
+
 
 
 instance_destroy();

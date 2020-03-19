@@ -27,7 +27,26 @@ globalvar bossmaxlives;
 bossmaxlives = 300;
 
 globalvar skillcd;
-skillcd = 20;
+skillcd = 14;
 
 globalvar shielddur;
 shielddur = 5;
+
+globalvar  shotgun_amt;
+shotgun_amt = 4 ;
+
+globalvar shotgun_amt_step;
+shotgun_amt_step = 2 ;
+
+globalvar shotgun_angle;
+shotgun_angle = 60 ;
+
+globalvar shotgun_angle_step;
+shotgun_angle_step = 20;
+
+globalvar shotgun_level;
+shotgun_level = 0;
+
+globalvar shotgun_level_max;
+shotgun_level_max = 6;
+

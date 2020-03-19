@@ -3,7 +3,7 @@
 if (instance_exists(obj_ship))
 
 {
-	if (obj_ship.alarm[3] >= 0 )
+	if (obj_ship.alarm[3] >= 0 || obj_ship.alarm[2] <= 0 )
 	{
 	sprite_index = spr_icon_shield_1;	
 	//draw_sprite(spr_icon_shield_1,0,room_width,room_height);
@@ -14,6 +14,7 @@ if (instance_exists(obj_ship))
 	//draw_set_valign(fa_top);
 	
 	}
+	
 	
 	if (obj_ship.alarm[3] <= 0 && obj_ship.alarm[2] >= 0)
 	{

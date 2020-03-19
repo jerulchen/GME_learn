@@ -1,0 +1,7 @@
+字体 font0 已经转换为字体家族 Cooper Black (Regular) - 字体已重新生成, 可能发生轻微不一致
+macOS 图标 ${options_dir}\mac\icons\icon512.png 写的是 32-bit
+由于GameMaker Studio 2的改变，Windows NSIS安装程序的脚本被设置为默认
+游戏速度设置为 30
+添加兼容性脚本 'background/draw_background_stretched.gml'
+添加兼容性脚本 'background/__init_background.gml'
+添加兼容性脚本 '__init_global.gml'
