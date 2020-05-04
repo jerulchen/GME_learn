@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Heart Space Shooter Resources/Sprite-0001.png" type="Texture" id=1]
+[ext_resource path="res://Enemy.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Move"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
+}
+
+[node name="Enemy" type="Area2D"]
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+flip_h = true
+hframes = 3
+frame = 1
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+position = Vector2( -4, -1.9 )
+scale = Vector2( 1.5, 1.16964 )
+polygon = PoolVector2Array( -8.66667, -18.8947, -14.6667, -17.1847, -15.3333, -0.940458, -12, 3.33435, -12.6667, 9.31908, -13.3333, 14.4489, -6, 19.5786, 0.666667, 18.7237, 6, 21.2886, 11.3333, 20.4336, 16.6667, 17.8687, 17.3333, 8.46412, 11.3333, 3.33435, 6.66667, -1.79542, 4.66667, -11.2, 8, -15.4748, 1.33333, -18.0397 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -2, -0.500002 )
+scale = Vector2( 2.5, 2.85 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Move"
+anims/Move = SubResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

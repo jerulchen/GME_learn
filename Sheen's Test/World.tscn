@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tree.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+
+[node name="World" type="YSort"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 157.734, 87.1687 )
+
+[node name="Tree" parent="." instance=ExtResource( 1 )]
+position = Vector2( 222.298, 93.6585 )
+
+[node name="Tree2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 66.4511, 130.262 )
+
+[node name="Tree3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 292.863, 160.827 )
+
+[node name="Tree4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 98.9035, 25.3575 )
