@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -8,8 +8,46 @@
 [ext_resource path="res://Enemies/WalkingEnemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://World/Camera2D.tscn" type="PackedScene" id=7]
 [ext_resource path="res://UI/UI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemies/FlyingEnemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Enemies/PlantEnemy.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Enemies/CrawingEnemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Brick.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=1]
+resource_name = "Loop"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Loop"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Path2D/PathFollow2D:unit_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( -2, -2 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=3]
 resource_name = "Loop"
 length = 4.0
 loop = true
@@ -40,13 +78,16 @@ position = Vector2( 80, 120 )
 smoothing_enabled = true
 
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
-tile_data = PoolIntArray( -65522, 0, 0, -65521, 0, 1, -65520, 0, 2, 0, 0, 0, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 6, 0, 1, 7, 0, 1, 8, 0, 1, 9, 0, 1, 10, 0, 1, 11, 0, 1, 12, 0, 1, 13, 0, 1, 14, 0, 131078, 15, 0, 65537, 16, 0, 131077, 17, 0, 1, 18, 0, 1, 19, 0, 2, 65536, 0, 65540, 65537, 0, 131073, 65538, 0, 131073, 65539, 0, 131073, 65540, 0, 131073, 65541, 0, 131073, 65542, 0, 65542, 65543, 0, 65541, 65544, 0, 131073, 65545, 0, 131073, 65546, 0, 131073, 65547, 0, 131073, 65548, 0, 131073, 65549, 0, 131073, 65550, 0, 65542, 65551, 0, 65537, 65552, 0, 65537, 65553, 0, 65537, 65554, 0, 65537, 65555, 0, 65538, 131072, 0, 65539, 131078, 0, 65536, 131079, 0, 65538, 131086, 0, 65536, 131087, 0, 65537, 131088, 0, 65537, 131089, 0, 65541, 131090, 0, 131073, 131091, 0, 65543, 196608, 0, 65539, 196614, 0, 65540, 196615, 0, 131074, 196622, 0, 65536, 196623, 0, 65537, 196624, 0, 65541, 196625, 0, 131074, 196627, 0, 65539, 262144, 0, 65539, 262150, 0, 65539, 262158, 0, 131072, 262159, 0, 131073, 262160, 0, 131074, 262163, 0, 65539, 327680, 0, 65539, 327686, 0, 131075, 327699, 0, 65539, 393216, 0, 65539, 393234, 0, 196608, 393235, 0, 262151, 458752, 0, 65539, 458771, 0, 65539, 524288, 0, 65539, 524301, 0, 3, 524304, 0, 196608, 524305, 0, 196609, 524306, 0, 196609, 524307, 0, 262151, 589824, 0, 65539, 589830, 1, 3, 589831, 1, 4, 589832, 536870912, 1, 589833, 0, 1, 589834, 0, 2, 589837, 0, 131076, 589838, 0, 2, 589843, 0, 65539, 655360, 0, 131076, 655361, 0, 1, 655362, 0, 1, 655363, 0, 1, 655364, 0, 1, 655365, 0, 1, 655366, 1, 1, 655367, 0, 65537, 655368, 0, 65537, 655369, 0, 65537, 655370, 0, 131077, 655371, 0, 1, 655372, 0, 1, 655373, 0, 131078, 655374, 0, 131077, 655375, 0, 1, 655376, 0, 1, 655377, 0, 1, 655378, 0, 1, 655379, 0, 131082, 655380, 0, 196610, 720896, 0, 131072, 720897, 0, 131073, 720898, 0, 131073, 720899, 0, 131073, 720900, 0, 131073, 720901, 0, 131073, 720902, 0, 131073, 720903, 0, 131073, 720904, 0, 131073, 720905, 0, 131073, 720906, 0, 131073, 720907, 0, 131073, 720908, 0, 131073, 720909, 0, 131073, 720910, 0, 131073, 720911, 0, 131073, 720912, 0, 131073, 720913, 0, 131073, 720914, 0, 131073, 720915, 0, 131074 )
+tile_data = PoolIntArray( -458752, 0, 0, -458751, 0, 1, -458750, 0, 1, -458749, 0, 1, -458748, 0, 1, -458747, 0, 1, -458746, 0, 1, -458745, 0, 1, -458744, 0, 1, -458743, 0, 1, -458742, 0, 1, -458741, 0, 1, -458740, 0, 1, -458739, 0, 1, -458738, 0, 2, -458721, 0, 4, -458720, 0, 196609, -458719, 0, 7, -393216, 0, 65540, -393215, 0, 131073, -393214, 0, 131073, -393213, 0, 131073, -393212, 0, 131073, -393211, 0, 131073, -393210, 0, 131073, -393209, 0, 131073, -393208, 0, 131073, -393207, 0, 131073, -393206, 0, 131073, -393205, 0, 131073, -393204, 0, 131073, -393203, 0, 131073, -393202, 0, 196613, -393201, 0, 196609, -393200, 0, 196609, -393199, 0, 196609, -393198, 0, 196609, -393197, 0, 196609, -393196, 0, 196609, -393195, 0, 196609, -393194, 0, 196609, -393193, 0, 196609, -393192, 0, 196609, -393191, 0, 196609, -393190, 0, 196609, -393189, 0, 196609, -393188, 0, 196609, -393187, 0, 196609, -393186, 0, 196609, -393185, 0, 196615, -393183, 0, 65539, -262145, 0, 4, -327680, 0, 196615, -327647, 0, 65539, -196609, 0, 65539, -262111, 0, 65539, -131073, 0, 131076, -196608, 0, 2, -196575, 0, 65539, -65537, 0, 65536, -131072, 0, 65538, -131039, 0, 65539, -1, 0, 131072, -65536, 0, 9, -65535, 0, 2, -65503, 0, 65539, 0, 0, 65536, 1, 0, 131077, 2, 0, 1, 3, 0, 2, 19, 0, 3, 33, 0, 65539, 65536, 0, 65540, 65537, 0, 131073, 65538, 0, 131073, 65539, 0, 131074, 65551, 0, 0, 65552, 0, 1, 65553, 0, 1, 65554, 0, 1, 65555, 0, 131079, 65568, 0, 0, 65569, 0, 131079, 131072, 0, 65539, 131087, 0, 65536, 131088, 0, 65537, 131089, 0, 65541, 131090, 0, 131073, 131091, 0, 131074, 131104, 0, 65536, 131105, 0, 65538, 196608, 0, 65539, 196623, 0, 131072, 196624, 0, 131073, 196625, 0, 131074, 196640, 0, 65536, 196641, 0, 65538, 262144, 0, 65539, 262176, 0, 65536, 262177, 0, 65538, 327680, 0, 65539, 327712, 0, 65536, 327713, 0, 65538, 393216, 0, 65539, 393248, 0, 131072, 393249, 0, 65543, 458752, 0, 65539, 458771, 0, 3, 458785, 0, 65539, 524288, 0, 65539, 524301, 0, 3, 524304, 0, 196608, 524305, 0, 196609, 524306, 0, 196609, 524307, 0, 262151, 524321, 0, 65539, 589824, 0, 65539, 589830, 1, 3, 589831, 1, 4, 589832, 536870912, 1, 589833, 0, 1, 589834, 0, 2, 589837, 0, 131076, 589838, 0, 2, 589843, 0, 65539, 589857, 0, 65539, 655360, 0, 131076, 655361, 0, 1, 655362, 0, 1, 655363, 0, 1, 655364, 0, 1, 655365, 0, 1, 655366, 1, 1, 655367, 0, 65537, 655368, 0, 65537, 655369, 0, 65537, 655370, 0, 131077, 655371, 0, 1, 655372, 0, 1, 655373, 0, 131078, 655374, 0, 131077, 655375, 0, 1, 655376, 0, 1, 655377, 0, 1, 655378, 0, 1, 655379, 0, 131080, 655380, 0, 1, 655381, 0, 1, 655382, 0, 1, 655383, 0, 1, 655384, 0, 1, 655385, 0, 1, 655386, 0, 1, 655387, 0, 1, 655388, 0, 1, 655389, 0, 1, 655390, 0, 1, 655391, 0, 1, 655392, 0, 1, 655393, 0, 131079, 720896, 0, 131072, 720897, 0, 131073, 720898, 0, 131073, 720899, 0, 131073, 720900, 0, 131073, 720901, 0, 131073, 720902, 0, 131073, 720903, 0, 131073, 720904, 0, 131073, 720905, 0, 131073, 720906, 0, 131073, 720907, 0, 131073, 720908, 0, 131073, 720909, 0, 131073, 720910, 0, 131073, 720911, 0, 131073, 720912, 0, 131073, 720913, 0, 131073, 720914, 0, 131073, 720915, 0, 131073, 720916, 0, 131073, 720917, 0, 131073, 720918, 0, 131073, 720919, 0, 131073, 720920, 0, 131073, 720921, 0, 131073, 720922, 0, 131073, 720923, 0, 131073, 720924, 0, 131073, 720925, 0, 131073, 720926, 0, 131073, 720927, 0, 131073, 720928, 0, 131073, 720929, 0, 131074 )
 
 [node name="MovingPlatforms" parent="." instance=ExtResource( 4 )]
-position = Vector2( 48, 144 )
+position = Vector2( 472, 60 )
+
+[node name="MovingPlatforms3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 372, 12 )
 
 [node name="MovingPlatforms2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 160, 112 )
+position = Vector2( 362, 107 )
 
 [node name="Path2D" parent="MovingPlatforms2" index="1"]
 curve = ExtResource( 5 )
@@ -54,8 +95,53 @@ curve = ExtResource( 5 )
 [node name="AnimationPlayer" parent="MovingPlatforms2" index="2"]
 anims/Loop = SubResource( 1 )
 
+[node name="MovingPlatforms4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 114, 30 )
+
+[node name="Path2D" parent="MovingPlatforms4" index="1"]
+curve = ExtResource( 5 )
+
+[node name="AnimationPlayer" parent="MovingPlatforms4" index="2"]
+anims/Loop = SubResource( 2 )
+
+[node name="MovingPlatforms5" parent="." instance=ExtResource( 4 )]
+position = Vector2( 200, -45 )
+
+[node name="Path2D" parent="MovingPlatforms5" index="1"]
+curve = ExtResource( 5 )
+
+[node name="AnimationPlayer" parent="MovingPlatforms5" index="2"]
+anims/Loop = SubResource( 3 )
+
 [node name="WalkingEnemy" parent="." instance=ExtResource( 6 )]
-position = Vector2( 80, 160 )
+position = Vector2( 49, -1 )
+
+[node name="FlyingEnemy" parent="WalkingEnemy" instance=ExtResource( 9 )]
+position = Vector2( 235, -201 )
+
+[node name="WalkingEnemy" parent="WalkingEnemy" instance=ExtResource( 6 )]
+position = Vector2( 152, -129 )
+
+[node name="FlyingEnemy" parent="." instance=ExtResource( 9 )]
+position = Vector2( 347, -58 )
+
+[node name="WalkingEnemy6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 394, 157 )
+
+[node name="WalkingEnemy5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 473, 55 )
+
+[node name="FlyingEnemy2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 453, -49 )
+
+[node name="FlyingEnemy3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 102, -40 )
+
+[node name="FlyingEnemy4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 297, 81 )
+
+[node name="WalkingEnemy4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 159, 143 )
 
 [node name="WalkingEnemy2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 192, 160 )
@@ -65,6 +151,50 @@ position = Vector2( 272, 128 )
 
 [node name="UI" parent="." instance=ExtResource( 8 )]
 
+[node name="PlantEnemy" parent="." instance=ExtResource( 10 )]
+position = Vector2( 241, 51 )
+rotation = -1.57079
+
+[node name="PlantEnemy2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 413, -80 )
+rotation = -3.14159
+
+[node name="CrawingEnemy" parent="." instance=ExtResource( 11 )]
+position = Vector2( 31, 160 )
+WALKING_DIRECTION = -1
+
+[node name="CrawingEnemy2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 280, 16 )
+WALKING_DIRECTION = -1
+
+[node name="CrawingEnemy3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 436, 161 )
+WALKING_DIRECTION = -1
+
+[node name="CrawingEnemy4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 299, -80 )
+rotation = -3.14159
+WALKING_DIRECTION = -1
+
+[node name="Brick" parent="." instance=ExtResource( 12 )]
+position = Vector2( 118, 91 )
+
+[node name="Brick2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 134, 91 )
+
+[node name="Brick3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 150, 91 )
+
+[node name="Brick4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 150, 75 )
+
+[node name="Brick5" parent="." instance=ExtResource( 12 )]
+position = Vector2( 166, 75 )
+
 [editable path="Player"]
 
 [editable path="MovingPlatforms2"]
+
+[editable path="MovingPlatforms4"]
+
+[editable path="MovingPlatforms5"]

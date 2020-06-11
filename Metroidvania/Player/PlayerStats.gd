@@ -3,11 +3,14 @@ class_name PlayerStats
 
 var max_health = 4 setget set_max_health
 var health = max_health setget set_health
+var max_missiles = 3
+var missiles = max_missiles setget set_missiles
+
 
 signal player_died
 signal health_changed
 signal max_health_changed
-
+signal player_missiles_changed(value)
 
 func set_health(value):
 	if value < health:
@@ -22,3 +25,7 @@ func set_max_health(value):
 	max_health = max(value, 1)
 	self.health = min(value, value)
 	emit_signal("max_health_changed", max_health)
+
+func set_missiles(value):
+	missiles = clamp(value, 0, max_missiles)
+	emit_signal("player_missiles_changed", missiles)

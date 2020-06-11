@@ -10,11 +10,17 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Resource",
+"class": "MainInstances",
+"language": "GDScript",
+"path": "res://MainInstances.gd"
+}, {
+"base": "Resource",
 "class": "PlayerStats",
 "language": "GDScript",
 "path": "res://Player/PlayerStats.gd"
 } ]
 _global_script_class_icons={
+"MainInstances": "",
 "PlayerStats": ""
 }
 
@@ -109,6 +115,11 @@ pause={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
+fire_missile={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -116,6 +127,7 @@ pause={
 2d_physics/layer_2="World"
 2d_physics/layer_3="PlayerHurtbox"
 2d_physics/layer_4="EnemyHurtbox"
+2d_physics/layer_5="Brick"
 
 [rendering]
 
