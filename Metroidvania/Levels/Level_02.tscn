@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Enemies/Spikes.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/BossEnemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=3]
+[ext_resource path="res://World/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://DoorConnections/01_link_02.tres" type="Resource" id=5]
+[ext_resource path="res://Levels/Level_02.gd" type="Script" id=6]
+[ext_resource path="res://World/Trigger.gd" type="Script" id=7]
+[ext_resource path="res://World/Trigger.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World/TileMap.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 25 )
+
+[node name="Level_02" instance=ExtResource( 3 )]
+script = ExtResource( 6 )
+
+[node name="TileMap" parent="." index="0"]
+tile_data = PoolIntArray( -131068, 0, 0, -131067, 0, 1, -131066, 0, 1, -131065, 0, 1, -131064, 0, 1, -131063, 0, 2, -65534, 0, 0, -65533, 0, 1, -65532, 0, 131078, -65531, 0, 65537, -65530, 0, 65537, -65529, 0, 65537, -65528, 0, 65537, -65527, 0, 131077, -65526, 0, 2, 0, 0, 0, 1, 0, 1, 2, 0, 131078, 3, 0, 65537, 4, 0, 65541, 5, 0, 131073, 6, 0, 131073, 7, 0, 131073, 8, 0, 65544, 9, 0, 131073, 10, 0, 196613, 11, 0, 196609, 12, 0, 6, 13, 0, 1, 14, 0, 1, 15, 0, 1, 16, 0, 5, 17, 0, 196609, 18, 0, 196609, 19, 0, 196609, 20, 0, 6, 21, 0, 1, 22, 0, 1, 23, 0, 1, 24, 0, 1, 25, 0, 5, 26, 0, 196610, 65536, 0, 65536, 65537, 0, 65537, 65538, 0, 65541, 65539, 0, 131073, 65540, 0, 131074, 65544, 0, 131075, 65548, 0, 65536, 65549, 0, 65537, 65550, 0, 65537, 65551, 0, 65541, 65552, 0, 131074, 65556, 0, 131072, 65557, 0, 131073, 65558, 0, 65542, 65559, 0, 65537, 65560, 0, 65541, 65561, 0, 131074, 196606, 0, 0, 196607, 0, 1, 131072, 0, 65545, 131073, 0, 131073, 131074, 0, 131074, 131084, 0, 131072, 131085, 0, 131073, 131086, 0, 131073, 131087, 0, 131074, 131094, 0, 131072, 131095, 0, 65542, 131096, 0, 65538, 262142, 0, 65536, 262143, 0, 65537, 196608, 0, 65538, 196631, 0, 131072, 196632, 0, 9, 196633, 0, 1, 196634, 0, 1, 196635, 0, 2, 327678, 0, 65536, 327679, 0, 65537, 262144, 0, 65538, 262168, 0, 65536, 262169, 0, 65537, 262170, 0, 65537, 262171, 0, 131077, 262172, 0, 2, 393214, 0, 131072, 393215, 0, 65542, 327680, 0, 65538, 327704, 0, 65536, 327705, 0, 65537, 327706, 0, 65537, 327707, 0, 65537, 327708, 0, 65538, 458751, 0, 65536, 393216, 0, 65538, 393240, 0, 65536, 393241, 0, 65537, 393242, 0, 65537, 393243, 0, 65541, 393244, 0, 131074, 524287, 0, 131072, 458752, 0, 65543, 458776, 0, 65536, 458777, 0, 65537, 458778, 0, 65537, 458779, 0, 65538, 524288, 0, 131075, 524307, 0, 3, 524312, 0, 65536, 524313, 0, 65537, 524314, 0, 65541, 524315, 0, 131074, 589842, 0, 0, 589843, 0, 131080, 589844, 0, 2, 589847, 0, 0, 589848, 0, 131078, 589849, 0, 65537, 589850, 0, 65538, 655377, 0, 0, 655378, 0, 131078, 655379, 0, 65537, 655380, 0, 131077, 655381, 0, 1, 655382, 0, 1, 655383, 0, 131078, 655384, 0, 65537, 655385, 0, 65537, 655386, 0, 65538, 786429, 0, 196608, 786430, 0, 196609, 786431, 0, 196609, 720896, 0, 6, 720897, 0, 1, 720898, 0, 1, 720899, 0, 1, 720900, 0, 1, 720901, 0, 1, 720902, 0, 1, 720903, 0, 2, 720912, 0, 0, 720913, 0, 131078, 720914, 0, 65537, 720915, 0, 65537, 720916, 0, 65537, 720917, 0, 65537, 720918, 0, 65537, 720919, 0, 65537, 720920, 0, 65541, 720921, 0, 131073, 720922, 0, 131074, 786432, 0, 131072, 786433, 0, 131073, 786434, 0, 131073, 786435, 0, 65542, 786436, 0, 65537, 786437, 0, 65541, 786438, 0, 131073, 786439, 0, 196613, 786440, 0, 6, 786441, 0, 1, 786442, 0, 1, 786443, 0, 1, 786444, 0, 5, 786445, 0, 196609, 786446, 0, 196609, 786447, 0, 6, 786448, 0, 131078, 786449, 0, 65537, 786450, 0, 65537, 786451, 0, 65537, 786452, 0, 65537, 786453, 0, 65537, 786454, 0, 65537, 786455, 0, 65541, 786456, 0, 131074, 851971, 0, 65540, 851972, 0, 131073, 851973, 0, 131074, 851976, 0, 131072, 851977, 0, 131073, 851978, 0, 65542, 851979, 0, 65537, 851980, 0, 65538, 851983, 0, 131072, 851984, 0, 65542, 851985, 0, 65537, 851986, 0, 65537, 851987, 0, 65541, 851988, 0, 131073, 851989, 0, 131073, 851990, 0, 131073, 851991, 0, 131074, 917507, 0, 131075, 917514, 0, 131072, 917515, 0, 65544, 917516, 0, 131074, 917520, 0, 65536, 917521, 0, 65541, 917522, 0, 131073, 917523, 0, 131074, 983051, 0, 131075, 983056, 0, 131072, 983057, 0, 131074 )
+
+[node name="BossEnemy" parent="." index="1" instance=ExtResource( 2 )]
+position = Vector2( 189, 97 )
+
+[node name="Door" parent="." index="2" instance=ExtResource( 4 )]
+position = Vector2( 8, 160 )
+scale = Vector2( -1, 1 )
+connection = ExtResource( 5 )
+new_level_path = "res://Levels/Level_01.tscn"
+
+[node name="SpikesCollection" type="Node2D" parent="." index="3"]
+
+[node name="Spikes" parent="SpikesCollection" index="0" instance=ExtResource( 1 )]
+position = Vector2( 32, 51 )
+rotation = 1.57079
+
+[node name="Spikes2" parent="SpikesCollection" index="1" instance=ExtResource( 1 )]
+position = Vector2( 32, 67 )
+rotation = 1.57079
+
+[node name="Spikes3" parent="SpikesCollection" index="2" instance=ExtResource( 1 )]
+position = Vector2( 32, 83 )
+rotation = 1.57079
+
+[node name="Spikes4" parent="SpikesCollection" index="3" instance=ExtResource( 1 )]
+position = Vector2( 368, 83 )
+rotation = -1.57079
+
+[node name="Spikes5" parent="SpikesCollection" index="4" instance=ExtResource( 1 )]
+position = Vector2( 368, 99 )
+rotation = -1.57079
+
+[node name="Spikes6" parent="SpikesCollection" index="5" instance=ExtResource( 1 )]
+position = Vector2( 368, 116 )
+rotation = -1.57079
+
+[node name="Spikes7" parent="SpikesCollection" index="6" instance=ExtResource( 1 )]
+position = Vector2( 319, 128 )
+
+[node name="Trigger" parent="." index="4" instance=ExtResource( 8 )]
+collision_layer = 0
+collision_mask = 2147483649
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" parent="Trigger" index="0"]
+position = Vector2( 36, 152 )
+shape = SubResource( 1 )
+
+[node name="BlockDoor" parent="." index="5" instance=ExtResource( 9 )]
+visible = false
+collision_layer = 0
+tile_data = PoolIntArray( 589824, 0, 3, 655360, 0, 131075 )
+[connection signal="died" from="BossEnemy" to="." method="_on_BossEnemy_died"]
+[connection signal="area_trigger" from="Trigger" to="." method="_on_Trigger_area_trigger"]
+[connection signal="body_entered" from="Trigger" to="Trigger" method="_on_Trigger_body_entered"]
+
+[editable path="Trigger"]
