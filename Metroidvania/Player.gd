@@ -44,21 +44,30 @@ onready var gun = $Sprite/PlayerGun
 onready var fireBulletTimer = $FireBulletTimer
 onready var BlinkAnimator = $BlinkAnimator
 onready var powerupDetector = $PowerupDetector
+onready var cameraFollow = $CameraFollow
 
 signal hit_door(door)
+signal player_died()
 
 func set_invincible(value):
 	invincible = value
 	
 func _ready():
 	PlayerStats.connect("player_died", self, "_on_died")
+	PlayerStats.missiles_unlocked = SaverAndLoader.custom_data.missiles_unlocked
 	MainInstances.Player = self
+
+	call_deferred("assign_world_camera")
 	
-func _exit_tree():
+func queue_free():
 	MainInstances.Player = null
+	.queue_free()
+	
+
+	
 
 func _physics_process(delta):
-	just_jumped = false
+	just_jumped = false\
 	
 	match state:
 		MOVE:
@@ -93,6 +102,8 @@ func _physics_process(delta):
 		if PlayerStats.missiles > 0 and PlayerStats.missiles_unlocked:
 			fire_missile()
 
+func assign_world_camera():
+	cameraFollow.remote_path = MainInstances.WorldCamera.get_path()
 	
 func save():
 	var save_dictionary = {
@@ -120,6 +131,7 @@ func fire_missile():
 	PlayerStats.missiles -= 1
 
 func create_dust_effect():
+	SoundFx.play("Step",rand_range(0.6, 1.2), -10)
 	var dust_position = global_position
 	dust_position.x += rand_range(-4, 4)
 	Utils.instance_scene_on_main(DustParticle, dust_position) #调用自建脚本的func，创建实例
@@ -162,6 +174,7 @@ func jump_check():
 			double_jump = false
 			
 func jump(force):
+	SoundFx.play("Jump", rand_range(0.8,1.1), -10)
 	motion.y = -force
 	snap_vector = Vector2.ZERO
 
@@ -228,7 +241,9 @@ func get_wall_axis():
 	return int(is_left_wall) - int(is_right_wall)
 	
 func wall_slide_jump_check(wall_axis):
+	
 	if Input.is_action_just_pressed("jump"):
+		SoundFx.play("Jump", rand_range(0.8,1.1), -5)
 		motion.x = wall_axis * MAX_SPEED
 		motion.y = -JUMP_FORCE / 1.25
 		state = MOVE
@@ -259,12 +274,15 @@ func wall_detach(delta, wall_axis):
 
 func _on_Hurtbox_hit(damage):
 	if not invincible:
+		SoundFx.play("Hurt")
 		PlayerStats.health -= damage
 		BlinkAnimator.play("Blink")
 
 
 func _on_died():
+	emit_signal("player_died")
 	queue_free()
+	
 
 
 func _on_PowerupDetector_area_entered(area):

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node
+
+export(String) var sound_string = \"\"
+export(float) var sound_pitch = 1
+export(int) var sound_volume = 0
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	if sound_string != \"\":
+		SoundFx.play(\"sound_string\", sound_pitch, sound_volume)
+"
+
+[node name="SoundPlayer" type="Node"]
+script = SubResource( 1 )

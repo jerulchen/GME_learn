@@ -9,11 +9,14 @@ func _ready():
 
 
 func _on_StartButton_pressed():
-	 get_tree().change_scene("res://World.tscn")
+	SoundFx.play("Click", 1, -10)
+	get_tree().change_scene("res://World.tscn")
 
 
 func _on_LoadButton_pressed():
-	pass # Replace with function body.
+	SoundFx.play("Click", 1, -10)
+	SaverAndLoader.is_loading = true
+	get_tree().change_scene("res://World.tscn")
 
 
 func _on_QuitButton_pressed():
