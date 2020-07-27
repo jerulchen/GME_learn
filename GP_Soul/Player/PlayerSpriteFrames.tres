@@ -1,0 +1,60 @@
+[gd_resource type="SpriteFrames" load_steps=13 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+load_path = "res://.import/attackWeapon1_1.png-3c01bd9cc3115640b9f7eb67ceecc42f.stex"
+
+[sub_resource type="StreamTexture" id=2]
+load_path = "res://.import/attackWeapon1_2.png-3b70816b630f3c452d67ca5bf4105777.stex"
+
+[sub_resource type="StreamTexture" id=3]
+load_path = "res://.import/attackWeapon1_3.png-42e03bd6e0e053410c1f22d7f3f6cbd5.stex"
+
+[sub_resource type="StreamTexture" id=4]
+load_path = "res://.import/attackWeapon2_1.png-08aaf505c3e52bd9ab377eb4a8414f5b.stex"
+
+[sub_resource type="StreamTexture" id=5]
+load_path = "res://.import/attackWeapon2_2.png-f11358ae5e54e981ca31e70150af7ff7.stex"
+
+[sub_resource type="StreamTexture" id=6]
+load_path = "res://.import/attackWeapon2_3.png-cf89542fe593f0e3a424aee561ff3760.stex"
+
+[sub_resource type="StreamTexture" id=7]
+load_path = "res://.import/attackWeapon3_1.png-b1c72692d85b1361a72034e0a8c4b9b7.stex"
+
+[sub_resource type="StreamTexture" id=8]
+load_path = "res://.import/attackWeapon3_2.png-cc47829f0c65d7e03d3bfca331096c79.stex"
+
+[sub_resource type="StreamTexture" id=9]
+load_path = "res://.import/attackWeapon3_3.png-88ef3650a1e0861360ed96e8a7583653.stex"
+
+[sub_resource type="StreamTexture" id=10]
+load_path = "res://.import/idle_sword_1.png-db1d08f1815bd410d6cd20735e687ad5.stex"
+
+[sub_resource type="StreamTexture" id=11]
+load_path = "res://.import/idle_sword_2.png-fa277f20fd9a33f61367061c4e6bceb5.stex"
+
+[sub_resource type="StreamTexture" id=12]
+load_path = "res://.import/idle_sword_3.png-9fffdb2e7ab56ddcb2b402afdda7b227.stex"
+
+[resource]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "Attack_1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "Attack_2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "Attack_3",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
