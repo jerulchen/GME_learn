@@ -6,17 +6,31 @@ export(float) var friction = 0.2
 export(int) var MAX_SLOPE_ANGLE = 45
 export(int) var gravity = 200
 
+onready var animationTree = $AnimationTree
+onready var animationState = animationTree.get("parameters/playback")
+
 var motion = Vector2.ZERO
 var snap_vector = Vector2.ZERO
 
+func _ready():
+	 animationTree.active = true
 
 func _physics_process(delta):
 	var input_vector = get_input_vector()
+	apply_animation(input_vector)
 	apply_h_move_force(input_vector, delta)
 	apply_gravity(delta)
 	apply_friction(input_vector)
 	apply_snap_vector()
 	move()
+
+func apply_animation(input_vector):
+	if input_vector != Vector2.ZERO:
+		animationTree.set("parameters/Idle/blend_position", input_vector)
+		animationTree.set("parameters/Run/blend_position", input_vector)
+		animationState.travel("Run")
+	else:
+		animationState.travel("Idle")
 
 func get_input_vector():
 	var input_vector = Vector2.ZERO
